@@ -193,6 +193,27 @@ namespace UnitTest_forLab2
 
 			Assert::IsTrue(map.findNode(25) == nullptr);
 		}
+		
+		TEST_METHOD(get_keys_is_correct)
+		{
+			Map<int, int> map;
+			map.insert(7, 20);
+			map.insert(8, 60);
+			map.insert(10, 10);
+			List<int>* list = map.get_keys();
+			Assert::IsTrue(list->at(0) == 10 && list->at(1) == 7 && list->at(2) == 8 && list->get_size()==3);
+
+		}
+
+		TEST_METHOD(get_values_is_correct)
+		{
+			Map<int, int> map;
+			map.insert(7, 20);
+			map.insert(8, 60);
+			map.insert(10, 10);
+			List<int>* list = map.get_values();
+			Assert::IsTrue(list->at(0) == 10 && list->at(1) == 20 && list->at(2) == 60 && list->get_size() == 3);
+		}
 
 	};
 }
